@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HelixMine — Enterprise Mining Solutions (Demo)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b1220;
+      --panel:#0f1724;
+      --accent:#4fd1c5;
+      --muted:#9aa6b2;
+      --glass: rgba(255,255,255,0.03);
+      --card:#0d1622;
+    }
+    *{box-sizing:border-box;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+    body{margin:0;background:linear-gradient(180deg,#061021 0%, #071526 60%); color:#e6eef3; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+    header{display:flex;align-items:center;justify-content:space-between;padding:28px 48px;}
+    .brand{display:flex;gap:14px;align-items:center;}
+    .logo{width:48px;height:48px;border-radius:8px;background:linear-gradient(135deg,#2dd4bf,#06b6d4);display:flex;align-items:center;justify-content:center;font-weight:700;color:#052025;box-shadow:0 6px 18px rgba(7,12,20,0.6);}
+    .title{font-weight:700;font-size:18px}
+    .tag{font-size:12px;color:var(--muted);margin-top:2px}
+    nav a{color:var(--muted);margin-left:18px;text-decoration:none;font-weight:600}
+    .hero{display:flex;gap:36px;padding:32px 48px;align-items:center;}
+    .left{flex:1}
+    h1{margin:0;font-size:36px;line-height:1.02}
+    p.lead{color:var(--muted);max-width:60ch;margin-top:12px}
+    .cta{margin-top:20px;display:flex;gap:12px}
+    .btn{background:linear-gradient(90deg, #06b6d4, #34d399);border:none;color:#052025;padding:12px 18px;border-radius:10px;font-weight:700;cursor:pointer;box-shadow:0 8px 30px rgba(6,182,212,0.12)}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+    .right{width:420px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:18px;box-shadow:0 10px 40px rgba(2,6,23,0.7)}
+    .stat{display:flex;justify-content:space-between;align-items:center;padding:12px 10px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));margin-bottom:12px}
+    .s-left{color:var(--muted);font-size:13px}
+    .s-right{font-weight:700;font-size:18px}
+    footer{padding:28px 48px;color:var(--muted);font-size:13px;border-top:1px solid rgba(255,255,255,0.02)}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .feature{background:var(--card);padding:14px;border-radius:10px}
+    .mini{font-size:12px;color:var(--muted)}
+    @media (max-width:880px){
+      .hero{flex-direction:column;padding:18px}
+      .right{width:100%}
+      .features{grid-template-columns:repeat(1,1fr)}
+      header{padding:16px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">HM</div>
+      <div>
+        <div class="title">HelixMine</div>
+        <div class="tag">Enterprise Mining Management — Demo</div>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="login.html">Customer Login</a>
+      <a href="#">Docs</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="left">
+        <h1>Secure. Scalable. Transparent — Mining infrastructure that scales.</h1>
+        <p class="lead">Monitor rigs, track pool performance and view earnings — all from an enterprise-grade dashboard. (Demo — no live mining.)</p>
+        <div class="cta">
+          <a class="btn" href="login.html">Customer Login</a>
+          <button class="btn ghost" onclick="alert('This is a demo site — replace this action with a real CTA.')">Request Demo</button>
+        </div>
+
+        <div class="features" style="margin-top:24px">
+          <div class="feature">
+            <div style="font-weight:700">Real-time Metrics</div>
+            <div class="mini">Live-style hash rates, shares and temperatures (simulated).</div>
+          </div>
+          <div class="feature">
+            <div style="font-weight:700">Pool Integration</div>
+            <div class="mini">Enterprise-ready pool views and earnings preview (demo).</div>
+          </div>
+          <div class="feature">
+            <div style="font-weight:700">Role-based Access</div>
+            <div class="mini">Admin, operator and read-only modes — UI only.</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="right" aria-hidden="true">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+          <div style="font-weight:700">Account Overview</div>
+          <div style="color:var(--muted);font-size:13px">Last sync: 3s ago (simulated)</div>
+        </div>
+
+        <div class="stat">
+          <div class="s-left">Simulated Hashrate</div>
+          <div class="s-right" id="hashrate">198.4 MH/s</div>
+        </div>
+
+        <div class="stat">
+          <div class="s-left">Pool: HelixPool (demo)</div>
+          <div class="s-right" id="shares">1,242</div>
+        </div>
+
+        <div class="stat">
+          <div class="s-left">Pending Payout</div>
+          <div class="s-right">0.0123 BTC</div>
+        </div>
+
+        <div style="margin-top:12px">
+          <div style="font-size:13px;color:var(--muted);margin-bottom:8px">Quick actions</div>
+          <div style="display:flex;gap:10px">
+            <button class="btn ghost" onclick="alert('Demo mode — no action')">Restart Rigs</button>
+            <button class="btn" onclick="location.href='login.html'">Open Dashboard</button>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    © HelixMine Demo — UI prototype. For demonstration only. Not a functional miner.
+  </footer>
+
+  <script>
+    // small animated demo to make numbers feel live
+    const hashrateEl = document.getElementById('hashrate');
+    const sharesEl = document.getElementById('shares');
+
+    let base = 198.4;
+    let shares = 1242;
+
+    function tick() {
+      // pseudo-random small oscillation for realism
+      const jitter = (Math.sin(Date.now()/1200) + Math.cos(Date.now()/2100))/2 * 4.2;
+      const value = (base + jitter + (Math.random()-0.5)*1.7).toFixed(1);
+      hashrateEl.textContent = value + ' MH/s';
+
+      if (Math.random() > 0.6) {
+        shares += Math.floor(Math.random()*3);
+        sharesEl.textContent = shares.toLocaleString();
+      }
+    }
+    setInterval(tick, 900);
+  </script>
+</body>
+</html>
